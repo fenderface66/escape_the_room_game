@@ -27,3 +27,16 @@
 *.exe
 *.out
 *.app
+
+# Databases
+*.db
+
+# Directories
+*/Build
+*/Binaries
+*/DerivedDataCache
+*/Intermediate
+*/Saved
+/escape_the_room/Content/StarterContent
+
+/escape_the_room/escape_the_room.VC.VC.opendb
