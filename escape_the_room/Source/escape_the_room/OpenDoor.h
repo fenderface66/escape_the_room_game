@@ -15,30 +15,30 @@ public:
 	// Sets default values for this component's properties
 	UOpenDoor();
 
+	// Called when the game starts
+	virtual void BeginPlay() override;
+
 	void OpenDoor();
 	void CloseDoor();
 
-	// Called when the game starts
-	virtual void BeginPlay() override;
-	
 	// Called every frame
-	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 		
 private:
 
 	UPROPERTY(EditAnywhere)
 	float OpenAngle = -90.0f;
-	
+
 	UPROPERTY(EditAnywhere)
 	ATriggerVolume* PressurePlate;
 
 	UPROPERTY(EditAnywhere)
-	float DoorCloseDelay = 1.f;
+	float DoorCloseDelay = 0.1f;
 
 	float LastDoorOpenTime;
 
-	AActor* ActorThatOpens; //Pawn inherits from actor
-	AActor* Owner = GetOwner();
+	AActor* ActorThatOpens; // Remember pawn inherits from actor
+	AActor* Owner; // The owning door
 
 };
