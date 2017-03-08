@@ -21,15 +21,12 @@ void UOpenDoor::BeginPlay()
 {
 
 	Super::BeginPlay();
-	if (!Owner) 
-	{
-		UE_LOG(LogTemp, Error, TEXT("No Owner pointer"))
-	}
+	Owner = GetOwner();
 	if (!PressurePlate)
 	{
 		UE_LOG(LogTemp, Error, TEXT("No Pressure plate pointer"))
 	}
-	Owner = GetOwner();
+	
 	
 }      
 
